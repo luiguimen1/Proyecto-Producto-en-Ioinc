@@ -1,0 +1,30 @@
+<!--
+  Generated template for the MultiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>multi</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h1>Tabla de Multiplicar</h1>
+    <ion-grid>
+        <ion-row>
+            <ion-col>Numero</ion-col>
+            <ion-col>Por</ion-col>
+            <ion-col>Resultado</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let resultado of edificio">
+            <ion-col>{{resultado.n1}}</ion-col>
+            <ion-col>{{resultado.n2}}</ion-col>
+            <ion-col>{{resultado.resul}}</ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

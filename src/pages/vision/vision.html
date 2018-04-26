@@ -1,0 +1,57 @@
+<!--
+  Generated template for the VisionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <ion-title>vision</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<!--  [(ngModel)]="value" -->
+<ion-content padding>
+    <ion-item>
+        Calculadora
+    </ion-item>
+    <div>
+        <ion-list>
+            <ion-item>
+                <ion-label color="primary">Numero 1</ion-label>
+                <ion-input type="number" placeholder="Ingrese numero 1" [(ngModel)]="N1"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary" fixed>Numero 2</ion-label>
+                <ion-input type="number" placeholder="Ingrese numero 2" [(ngModel)]="N2"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-6>
+                            <button class="Mibutton" ion-button (click)="suma()">Suma</button>
+                        </ion-col>
+                        <ion-col col-6>
+                            <button class="Mibutton" ion-button (click)="resta()">Resta</button>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-6>
+                            <button class="Mibutton" ion-button (click)="multi()">Multi</button>
+                        </ion-col>
+                        <ion-col col-6>
+                            <button class="Mibutton"ion-button (click)="irDivision()">Divi</button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+            </ion-item>
+        </ion-list>
+    </div>
+    <ion-item>
+        Resultado
+        <div>{{ Result }}</div>
+    </ion-item>
+
+
+</ion-content>
