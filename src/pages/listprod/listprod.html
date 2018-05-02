@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ListprodPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>listprod</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h2>Listado de productos</h2>
+    <h3>Por Categoría</h3>
+
+    <ion-item>
+        <ion-label color="primary">Categoría</ion-label>
+        <ion-select [(ngModel)]="cat">
+            <ion-option value="1">Muebles</ion-option>
+            <ion-option value="2">Sillas</ion-option>
+            <ion-option value="3">Cocina</ion-option>
+            <ion-option value="4">Baños</ion-option>
+            <ion-option value="5">Pisos</ion-option>
+            <ion-option value="6">Varios</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <button ion-button (click)='listar()'>Traer Lista</button>
+    </ion-item>
+    <ion-list>
+        <ion-item *ngFor="let pro of edificio">
+            <ion-avatar item-start>
+                <img src='http://192.168.0.225:8081/web2/img/{{pro.foto}}'>
+            </ion-avatar>
+            <h4>{{ pro.nombre }} {{ pro.can }}</h4>
+            <p>Destalles {{ pro.des }}</p>
+        </ion-item>
+    </ion-list>
+
+
+
+</ion-content>

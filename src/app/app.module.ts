@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {ErrorHandler, NgModule} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -12,6 +12,17 @@ import {VisionPage} from '../pages/vision/vision';
 import {RestaPage} from '../pages/resta/resta';
 import {MultiPage} from '../pages/multi/multi';
 import {DiviPage} from '../pages/divi/divi';
+
+
+import {AddfotoPage} from '../pages/addfoto/addfoto';
+import {AddprodPage} from '../pages/addprod/addprod';
+import {ListprodPage} from '../pages/listprod/listprod';
+
+
+import {FileTransfer, FileUploadOptions, FileTransferObject} from '@ionic-native/file-transfer';
+import {File} from '@ionic-native/file';
+import {Camera} from '@ionic-native/camera';
+
 import {ConectarProvider} from '../providers/conectar/conectar';
 
 @NgModule({
@@ -22,7 +33,10 @@ import {ConectarProvider} from '../providers/conectar/conectar';
         VisionPage,
         RestaPage,
         MultiPage,
-        DiviPage
+        DiviPage,
+        AddfotoPage,
+        AddprodPage,
+        ListprodPage
     ],
     imports: [
         BrowserModule,
@@ -37,13 +51,22 @@ import {ConectarProvider} from '../providers/conectar/conectar';
         VisionPage,
         RestaPage,
         MultiPage,
-        DiviPage
+        DiviPage,
+        AddfotoPage,
+        AddprodPage,
+        ListprodPage
     ],
     providers: [
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
-        ConectarProvider
+        ConectarProvider,
+        FileTransfer,
+       // FileUploadOptions,
+       // FileTransferObject,
+        File,
+        Camera
     ]
 })
+
 export class AppModule {}

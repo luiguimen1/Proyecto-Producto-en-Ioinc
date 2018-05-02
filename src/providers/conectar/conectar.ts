@@ -25,9 +25,24 @@ export class ConectarProvider {
 
     TraerTabla(dataJSON) {
         var url = this.url + 'generarTabla';
-        console.log(url);
-        console.log(JSON.stringify(dataJSON));
         return this.http.post(url, JSON.stringify(dataJSON), this.options);
     }
+
+
+    GuardarProducto(dataJSON) {
+        console.log(JSON.stringify(dataJSON));
+        var url = this.url + 'ADDProducto';
+        return this.http.post(url, JSON.stringify(dataJSON), this.options);
+    }
+    
+    TraerLista(dataJSON) {
+        var url = this.url + 'LisProXCat';
+        return this.http.post(url, JSON.stringify(dataJSON), this.options);
+    }
+    
+    
+
+
+
 
 }
