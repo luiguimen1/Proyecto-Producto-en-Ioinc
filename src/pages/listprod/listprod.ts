@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ConectarProvider} from '../../providers/conectar/conectar';
 import {ToastController} from 'ionic-angular';
+import {ViewprodPage} from '../viewprod/viewprod';
 /**
  * Generated class for the ListprodPage page.
  *
@@ -58,6 +59,13 @@ export class ListprodPage {
             console.log('Dismissed toast');
         });
         toast.present();
+    }
+    
+    verinfo(producto){
+        let local={
+            pro : producto
+        }
+        this.navCtrl.push(ViewprodPage, local);
     }
 
 }

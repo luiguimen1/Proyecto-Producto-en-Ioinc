@@ -16,7 +16,6 @@
 <ion-content padding>
     <h2>Listado de productos</h2>
     <h3>Por Categoría</h3>
-
     <ion-item>
         <ion-label color="primary">Categoría</ion-label>
         <ion-select [(ngModel)]="cat">
@@ -34,9 +33,9 @@
     <ion-list>
         <ion-item *ngFor="let pro of edificio">
             <ion-avatar item-start>
-                <img src='http://192.168.0.225:8081/web2/img/{{pro.foto}}'>
+                <img src='http://www.mirayaprender.com.co/movil/img/{{pro.foto}}' (click)="verinfo(pro)">
             </ion-avatar>
-            <h4>{{ pro.nombre }} {{ pro.can }}</h4>
+            <h4 (click)="verinfo(pro)">{{ pro.nombre }} {{ pro.can }}</h4>
             <p>Destalles {{ pro.des }}</p>
         </ion-item>
     </ion-list>

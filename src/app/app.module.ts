@@ -12,6 +12,7 @@ import {VisionPage} from '../pages/vision/vision';
 import {RestaPage} from '../pages/resta/resta';
 import {MultiPage} from '../pages/multi/multi';
 import {DiviPage} from '../pages/divi/divi';
+import {ViewprodPage} from '../pages/viewprod/viewprod';
 
 
 import {AddfotoPage} from '../pages/addfoto/addfoto';
@@ -36,7 +37,8 @@ import {ConectarProvider} from '../providers/conectar/conectar';
         DiviPage,
         AddfotoPage,
         AddprodPage,
-        ListprodPage
+        ListprodPage,
+        ViewprodPage
     ],
     imports: [
         BrowserModule,
@@ -54,7 +56,8 @@ import {ConectarProvider} from '../providers/conectar/conectar';
         DiviPage,
         AddfotoPage,
         AddprodPage,
-        ListprodPage
+        ListprodPage,
+        ViewprodPage
     ],
     providers: [
         StatusBar,

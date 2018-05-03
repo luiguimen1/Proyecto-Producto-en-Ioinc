@@ -14,7 +14,7 @@ export class ConectarProvider {
         console.log('Hello ConectarProvider Provider');
     }
 
-    url = 'http://192.168.0.225:8081/web2/';
+    url = 'http://www.mirayaprender.com.co/movil/';
 
     options = {
         headers: {
@@ -22,27 +22,20 @@ export class ConectarProvider {
         }
     };
 
-
     TraerTabla(dataJSON) {
         var url = this.url + 'generarTabla';
         return this.http.post(url, JSON.stringify(dataJSON), this.options);
     }
-
 
     GuardarProducto(dataJSON) {
         console.log(JSON.stringify(dataJSON));
         var url = this.url + 'ADDProducto';
         return this.http.post(url, JSON.stringify(dataJSON), this.options);
     }
-    
+
     TraerLista(dataJSON) {
         var url = this.url + 'LisProXCat';
         return this.http.post(url, JSON.stringify(dataJSON), this.options);
     }
-    
-    
-
-
-
 
 }

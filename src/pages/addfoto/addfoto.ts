@@ -19,12 +19,12 @@ import {Camera, CameraOptions} from '@ionic-native/camera';
 export class AddfotoPage {
     UrlImg;
     foto;
+    estado="";
     constructor(public navCtrl: NavController, public navParams: NavParams,
         private camera: Camera,
         private transfer: FileTransfer,
         public loadingCtrl: LoadingController,
         public toastCtrl: ToastController) {
-        this.UrlImg = "assets/IMG/sinfoto.png";
         this.foto = this.navParams.get("foto");
     }
 
@@ -38,6 +38,7 @@ export class AddfotoPage {
         this.camera.getPicture(options)
             .then(imageData => {
                 this.UrlImg = `data:image/jpeg;base64,${imageData}`;
+                this.estado="Imagen a cargar";
             })
             .catch(error => {
                 console.error(error);
@@ -56,6 +57,7 @@ export class AddfotoPage {
         this.camera.getPicture(options)
             .then(imageData => {
                 this.UrlImg = imageData;
+                this.estado="Imagen a cargar";
             })
             .catch(error => {
                 console.error(error);
@@ -65,6 +67,7 @@ export class AddfotoPage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad AddfotoPage');
+        this.UrlImg = 'assets/IMG/sinfoto.png';
     }
     respuesta;
     SubirSer() {
@@ -84,7 +87,7 @@ export class AddfotoPage {
             params: datos
         }
 
-        fileTransfer.upload(this.UrlImg, 'http://192.168.0.225:8081/web2/SubirFoto', options)
+        fileTransfer.upload(this.UrlImg, 'http://www.mirayaprender.com.co/movil/SubirFoto', options)
             .then((data) => {
                 //this.respuesta = JSON.stringify(data);
                 this.actualizar(data);
@@ -96,14 +99,16 @@ export class AddfotoPage {
                 this.presentToast(err);
             });
     }
-
+    infor;
     actualizar(data) {
-        if(data.response!="no"){
-           this.UrlImg = "http://192.168.0.225:8081/web2/img/" + data.response; 
-        }else{
+        if (data.response != "no") {
+            this.infor = JSON.stringify(data);
+            this.foto = JSON.parse(data.response).sucess;
+            this.estado="Vista desde el servidor";
+            this.UrlImg = "http://www.mirayaprender.com.co/movil/img/" + JSON.parse(data.response).sucess;
+        } else {
             this.presentToast("Error de carga al servidor");
         }
-        
     }
 
     presentToast(msg) {
