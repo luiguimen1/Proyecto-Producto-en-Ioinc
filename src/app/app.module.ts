@@ -13,6 +13,7 @@ import {RestaPage} from '../pages/resta/resta';
 import {MultiPage} from '../pages/multi/multi';
 import {DiviPage} from '../pages/divi/divi';
 import {ViewprodPage} from '../pages/viewprod/viewprod';
+import {PoliPage} from '../pages/poli/poli';
 
 
 import {AddfotoPage} from '../pages/addfoto/addfoto';
@@ -38,7 +39,8 @@ import {ConectarProvider} from '../providers/conectar/conectar';
         AddfotoPage,
         AddprodPage,
         ListprodPage,
-        ViewprodPage
+        ViewprodPage,
+        PoliPage
     ],
     imports: [
         BrowserModule,
@@ -57,7 +59,8 @@ import {ConectarProvider} from '../providers/conectar/conectar';
         AddfotoPage,
         AddprodPage,
         ListprodPage,
-        ViewprodPage
+        ViewprodPage,
+        PoliPage
     ],
     providers: [
         StatusBar,
@@ -65,8 +68,8 @@ import {ConectarProvider} from '../providers/conectar/conectar';
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         ConectarProvider,
         FileTransfer,
-       // FileUploadOptions,
-       // FileTransferObject,
+        // FileUploadOptions,
+        // FileTransferObject,
         File,
         Camera
     ]

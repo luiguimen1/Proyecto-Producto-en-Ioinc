@@ -4,6 +4,10 @@ import {MisionPage} from '../mision/mision';
 import {VisionPage} from '../vision/vision';
 import {AddprodPage} from '../addprod/addprod';
 import {ListprodPage} from '../listprod/listprod';
+import {PoliPage} from '../poli/poli';
+
+
+
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
@@ -24,8 +28,12 @@ export class HomePage {
     irServicios(){
         this.navCtrl.push(AddprodPage)
     }
+    
     irFotos(){
         this.navCtrl.push(ListprodPage)
+    }
+    irPoli(){
+        this.navCtrl.push(PoliPage)
     }
 
 
